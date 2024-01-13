@@ -1,7 +1,7 @@
 import styles from "./sidebar.module.css"
 import Menulink from "./menulink/menulink"
 import Image from "next/image";
-import {MdDashboard, MdSupervisedUserCircle} from "react-icons/md"
+import {MdDashboard, MdLogout, MdSupervisedUserCircle} from "react-icons/md"
 
 const menuItems = [
   {
@@ -55,7 +55,7 @@ const Sidebar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.user}>
-        <Image src="/noavatar.png" alt="" width="50" height="50" />
+        <Image className={styles.userImage} src="/noavatar.png" alt="" width="50" height="50" />
         <div className={styles.userDetail}>
           <span className={styles.username}>John Doe</span>
           <span className={styles.userTitle}>Administrator</span>
@@ -71,6 +71,7 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
+      <button className={styles.logout}><MdLogout/>Logout</button>
     </div>
   )
 }
